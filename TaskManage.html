@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="TaskManage.css">
+</head>
+
+<body>
+    <h1>Task Management System</h1>
+    <form id="taskForm">
+        <input type="text" id="titleInput" placeholder="Enter Title..." required>
+        <div>
+            Deadline Date :     
+            <input type="date" id="deadlineInput" placeholder="Deadline">
+        </div>
+        <textarea id="descriptionInput" placeholder="Add Description..."></textarea>
+        <div class="comp" style="display: flex;align-items: center;">
+            <input type="checkbox" id="completedInput">
+            <label for="completedInput">Completed</label>
+        </div>
+        <button type="submit">Add Task</button>
+    </form>
+    <div class="searchbar">
+        <input type="text" id="searchInput" onkeyup="searchTasks()" placeholder="Search tasks...">
+        <select id="filterSelect" onchange="filterTasks()">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">Uncompleted</option>
+        </select>
+    </div>
+    <div    id="tasksContainer"></div>
+    <script src="TaskManage.js"></script>
+</body>
+
+</html>
